@@ -1,16 +1,12 @@
-# Em's Nagels V5
+# Em's Nagels V5 Mobile
 
-Deze versie gebruikt Netlify Database en Netlify Functions.
+Deze versie is aangepast voor upload vanaf iPhone: alle bestanden staan in de hoofdmap.
 
-Belangrijk:
-1. Deploy deze map als bronproject (Git of Netlify CLI), niet als alleen een statische drag-and-drop map.
-2. Stel in Netlify de environment variable `ADMIN_PASSWORD` in.
-3. Optioneel: stel ook `ADMIN_SESSION_SECRET` in op een lange willekeurige waarde.
-4. Bij de eerste production deploy maakt Netlify Database automatisch de database en voert de migratie uit.
+Na koppeling met Netlify:
+1. Stel `ADMIN_PASSWORD` in.
+2. Stel bij voorkeur `ADMIN_SESSION_SECRET` in.
+3. Deploy opnieuw.
+4. Open één keer `/api/bootstrap?key=JOUW_WACHTWOORD` om de database-tabellen te maken.
+5. Daarna werkt `/admin`.
 
-Admin:
-- URL: /admin of /admin.html
-- gebruikersnaam: admin
-- wachtwoord: de waarde van ADMIN_PASSWORD
-
-Gegevens staan daarna centraal: klant en Emily gebruiken dezelfde agenda.
+Gebruikersnaam admin, wachtwoord = ADMIN_PASSWORD.
