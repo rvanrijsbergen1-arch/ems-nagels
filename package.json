@@ -1,0 +1,12 @@
+{
+  "name": "ems-nagels",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"Em's Nagels ready\""
+  },
+  "dependencies": {
+    "@netlify/database": "latest",
+    "@netlify/functions": "latest"
+  }
+}

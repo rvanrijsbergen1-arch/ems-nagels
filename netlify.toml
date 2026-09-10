@@ -1,0 +1,16 @@
+[build]
+  publish = "."
+  command = "npm run build"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
+
+[[redirects]]
+  from = "/login"
+  to = "/admin.html"
+  status = 200
