@@ -31,6 +31,23 @@ html{scroll-behavior:smooth}
 }
 </style>
 
+
+<style id="hero-book-btn-style">
+.hero-book-btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:13px 21px;
+  border-radius:999px;
+  background:#2d2825;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  font-size:15px;
+  box-shadow:0 8px 20px rgba(45,40,37,.12);
+}
+.hero-book-btn:active{transform:translateY(1px)}
+</style>
+
 </head>
 <body id="home">
 
@@ -40,7 +57,7 @@ html{scroll-behavior:smooth}
     <button class="ems-menu-toggle" aria-label="Menu openen" onclick="document.querySelector('.ems-nav-links').classList.toggle('open')">☰</button>
     <div class="ems-nav-links">
       <a href="#home">Home</a>
-      <a href="#afspraak-maken">Afspraak Maken</a>
+      <a href="#boeken">Afspraak Maken</a>
       <a href="#contact">Contact</a>
       <a class="ems-admin-link" href="admin.html">Login Admin</a>
     </div>
@@ -49,7 +66,7 @@ html{scroll-behavior:smooth}
 
 
 <main>
-<section class="hero"><div class="wrap"><div class="eyebrow">Jouw moment bij Emily</div><h1>Mooie nagels.<br>Helemaal jij.</h1><p>Kies je behandeling, pak een vrij plekje en laat de rest aan Emily over.</p><div class="notice">Online boeken via Em’s Nagels</div></div></section>
+<section class="hero"><div class="wrap"><div class="eyebrow">Jouw moment bij Emily</div><h1>Mooie nagels.<br>Helemaal jij.</h1><p>Kies je behandeling, pak een vrij plekje en laat de rest aan Emily over.</p><a href="#boeken" class="hero-book-btn">Afspraak maken</a></div></section>
 <section id="prijzen"><div class="wrap"><div class="section-title"><div class="eyebrow">Behandelingen</div><h2>Prijslijst</h2></div><div class="grid">
 <div class="card"><div class="eyebrow">Polygel</div><h3>Nieuwe set polygel</h3><p class="muted">Complete nieuwe set, inclusief gelpolish.</p><div class="meta"><span>120 min</span><span>€ 72,50</span></div></div>
 <div class="card"><div class="eyebrow">Polygel</div><h3>Nabehandeling polygel</h3><p class="muted">Je set weer mooi in model, inclusief gelpolish.</p><div class="meta"><span>90 min</span><span>€ 45,00</span></div></div>
