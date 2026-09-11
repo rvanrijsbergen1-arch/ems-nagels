@@ -59,6 +59,7 @@ html{scroll-behavior:smooth}
       <a href="#home">Home</a>
       <a href="#boeken">Afspraak Maken</a>
       <a href="#contact">Contact</a>
+      <a href="mijn-afspraken.html">Mijn afspraken</a>
       <a class="ems-admin-link" href="admin.html">Login Admin</a>
     </div>
   </div>
@@ -114,7 +115,7 @@ async function book(){
   try{
     const r=await fetch('/api/book',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name:customerName.value,email:email.value,phone:phone.value,date:selectedDate,time:selectedTime,treatmentId:selected.id})});
     const data=await r.json();if(!r.ok)throw new Error(data.error||'Boeken mislukt');
-    step3.classList.add('hidden');done.classList.remove('hidden');done.innerHTML='<strong>Afspraak ingepland.</strong><p>Je afspraak staat in Emily’s agenda.</p>';
+    step3.classList.add('hidden');done.classList.remove('hidden');done.innerHTML=`<strong>Afspraak ingepland.</strong><p>Je afspraak staat in Emily’s agenda.${data.emailSent?' Je ontvangt ook een bevestiging per e-mail.':''}</p><p><a href="mijn-afspraken.html" style="color:inherit;font-weight:700">Bekijk Mijn afspraken</a></p>`;
     await loadAvailability();
   }catch(e){alert(e.message);await loadAvailability();renderSlots(new Date(selectedDate+'T12:00:00'))}
   finally{btn.disabled=false;btn.textContent='Afspraak bevestigen'}
