@@ -20,3 +20,9 @@ Na upload naar dezelfde GitHub repository:
    Je hoort 'Database V7 klaar.' te zien.
 
 Voor Gmail App Password is 2-stapsverificatie op het Google-account nodig.
+
+
+## V7.1
+- Emily kan bij handmatig boeken optioneel e-mail en telefoonnummer invullen.
+- Met e-mail ontvangt de klant bevestiging, reminder en toegang tot Mijn afspraken.
+- Zonder e-mail/telefoon blijft het een privé-afspraak zonder mails of klantenportaal.

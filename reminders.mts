@@ -7,7 +7,7 @@ export default async (req:Request)=>{
   const d=db(),origin=Netlify.env.get("URL")||"https://emsnagels.netlify.app";
   const rows=await d.sql`SELECT id,customer_name,email,date::text AS date,start_time::text,treatment_name
     FROM appointments
-    WHERE status='Bevestigd' AND reminder_sent_at IS NULL
+    WHERE status='Bevestigd' AND reminder_sent_at IS NULL AND COALESCE(email,'')<>''
       AND ((date+start_time) AT TIME ZONE 'Europe/Amsterdam') >= NOW()+INTERVAL '23 hours'
       AND ((date+start_time) AT TIME ZONE 'Europe/Amsterdam') < NOW()+INTERVAL '25 hours'
     ORDER BY date,start_time`;

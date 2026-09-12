@@ -1,5 +1,6 @@
 import type { Context, Config } from "@netlify/functions";
 import { db, json, isAdmin, treatments } from "./_shared.mts";
+import { sendBookingEmails, mailConfigured } from "./_mailer.mts";
 
 export default async (req:Request,context:Context)=>{
   if(!isAdmin(req))return json({error:"Niet ingelogd"},401);
@@ -39,9 +40,20 @@ export default async (req:Request,context:Context)=>{
       await d.sql`DELETE FROM appointments WHERE id=${Number(b.id)}`;
     }else if(b.action==="manual-book"){
       const t=treatments[b.treatmentId as keyof typeof treatments];if(!t)throw new Error("Onbekende behandeling");
-      await d.sql`INSERT INTO appointments(customer_name,email,phone,date,start_time,duration_minutes,treatment_id,treatment_name,price_cents,status,source)
-        VALUES(${String(b.name||"").trim()},${String(b.email||"").trim()},${String(b.phone||"").trim()},
-          ${b.date}::date,${b.time}::time,${t.duration},${t.id},${t.name},${t.priceCents},'Bevestigd','Emily')`;
+      const name=String(b.name||"").trim();
+      const email=String(b.email||"").trim().toLowerCase();
+      const phone=String(b.phone||"").trim();
+      if(!name)throw new Error("Naam is verplicht.");
+      const rows=await d.sql`INSERT INTO appointments(customer_name,email,phone,date,start_time,duration_minutes,treatment_id,treatment_name,price_cents,status,source)
+        VALUES(${name},${email},${phone},${b.date}::date,${b.time}::time,${t.duration},${t.id},${t.name},${t.priceCents},'Bevestigd','Emily')
+        RETURNING id,customer_name,email,phone,date::text,start_time::text,duration_minutes,treatment_name,price_cents`;
+      const a:any=rows[0];
+      let emailSent=false;
+      if(email && mailConfigured()){
+        try{ emailSent=await sendBookingEmails(a,new URL(req.url).origin); }
+        catch(e){ console.error("Manual booking email failed",e); }
+      }
+      return json({ok:true,emailSent,hasEmail:!!email});
     }else throw new Error("Onbekende actie");
     return json({ok:true});
   }catch(e:any){return json({error:e?.message||"Actie mislukt"},400)}
