@@ -26,3 +26,9 @@ Voor Gmail App Password is 2-stapsverificatie op het Google-account nodig.
 - Emily kan bij handmatig boeken optioneel e-mail en telefoonnummer invullen.
 - Met e-mail ontvangt de klant bevestiging, reminder en toegang tot Mijn afspraken.
 - Zonder e-mail/telefoon blijft het een privé-afspraak zonder mails of klantenportaal.
+
+
+Update v7.2:
+- Logo van Em's Nagels verwerkt in website en admin portaal.
+- App icon / favicon / Apple touch icon toegevoegd.
+- site.webmanifest toegevoegd voor mooier icoon bij opslaan op beginscherm.

@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Em’s Nagels</title>
 <meta name="description" content="Plan eenvoudig je afspraak bij Em’s Nagels." />
+<meta name="theme-color" content="#f4eee7" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
 <style>
 :root{--cream:#f4eee7;--paper:#fbf8f4;--ink:#2c2724;--muted:#736963;--line:#ded4cc;--accent:#b6927f;--accent-soft:#eee1d8;--dark:#2d2825;--closed:#e9e4df}
 *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--ink)}a{color:inherit}.wrap{max-width:1120px;margin:auto;padding:0 20px}header{position:sticky;top:0;z-index:20;background:rgba(244,238,231,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-family:Georgia,serif;font-size:28px;font-weight:700;letter-spacing:.04em}.brand small{font:11px Arial,sans-serif;display:block;letter-spacing:.32em;text-transform:uppercase;margin-top:-3px}.links{display:flex;gap:22px;font-size:14px}.links a{text-decoration:none}.btn{border:0;border-radius:999px;padding:12px 18px;background:var(--dark);color:#fff;font-weight:700;cursor:pointer}.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}.hero{padding:88px 0 56px;text-align:center}.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}h1{font-family:Georgia,serif;font-size:clamp(42px,8vw,78px);font-weight:500;line-height:.95;margin:18px 0}.hero p{max-width:650px;margin:0 auto 28px;color:var(--muted);font-size:18px;line-height:1.6}.notice{display:inline-block;padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:13px;color:var(--muted)}section{padding:54px 0}.section-title{text-align:center;margin-bottom:28px}.section-title h2{font-family:Georgia,serif;font-size:38px;margin:8px 0}.section-title p{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 12px 34px rgba(54,43,35,.05)}.card h3{font-family:Georgia,serif;font-size:24px;margin:4px 0 8px}.meta{display:flex;justify-content:space-between;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-weight:700}.muted{color:var(--muted)}.booking{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.panel{background:#fff;border:1px solid var(--line);border-radius:26px;padding:26px}.steps{display:flex;gap:10px;margin-bottom:24px}.step{flex:1;font-size:12px;color:var(--muted);border-bottom:2px solid var(--line);padding-bottom:9px}.step.active{color:var(--ink);border-color:var(--dark)}label{display:block;font-size:13px;font-weight:700;margin:14px 0 7px}input,select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;font:inherit}.treatments{display:grid;gap:10px}.pick{display:flex;align-items:center;justify-content:space-between;padding:15px;border:1px solid var(--line);border-radius:16px;cursor:pointer}.pick.selected{outline:2px solid var(--accent);background:#fbf5f1}.summary h3{font-family:Georgia,serif;font-size:28px;margin-top:0}.summary-row{display:flex;justify-content:space-between;gap:15px;padding:10px 0;border-bottom:1px solid var(--line)}.small{font-size:13px;color:var(--muted);line-height:1.55}.hidden{display:none!important}.success{padding:20px;border-radius:16px;background:#f1f7f1;border:1px solid #cfe2cf}.calendar-head{display:flex;align-items:center;justify-content:space-between;margin:6px 0 18px}.calendar-head h3{font-family:Georgia,serif;font-size:25px;margin:0}.cal-nav{width:38px;height:38px;border:1px solid var(--line);background:#fff;border-radius:50%;cursor:pointer;font-size:20px}.weekdays,.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.weekdays div{text-align:center;font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;padding-bottom:4px}.cal-day{aspect-ratio:1/1;min-height:54px;border:1px solid var(--line);border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;cursor:pointer;position:relative}.cal-day:hover{border-color:var(--accent)}.cal-day.closed,.cal-day.past,.cal-day.empty{background:var(--closed);color:#aaa;cursor:default}.cal-day.empty{visibility:hidden}.cal-day.weekend:after{content:'dicht';font-size:8px;position:absolute;bottom:5px;font-weight:400}.cal-day.selected{background:var(--dark);color:#fff;border-color:var(--dark)}.cal-day.open:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);position:absolute;top:7px;right:7px}.slot-title{margin-top:20px;font-weight:700}.slots{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.slot{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 12px;cursor:pointer}.slot.selected{background:var(--dark);color:#fff;border-color:var(--dark)}footer{padding:42px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:13px}
@@ -15,13 +19,16 @@
 html{scroll-behavior:smooth}
 .ems-main-nav{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid #e5ddd6}
 .ems-nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;gap:18px}
-.ems-logo{font-family:Georgia,serif;font-size:22px;font-weight:700;color:#2d2825;text-decoration:none;white-space:nowrap}
-.ems-logo span{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:500;letter-spacing:.08em;margin-left:3px}
+.ems-logo{display:flex;align-items:center;gap:12px;color:#2d2825;text-decoration:none;white-space:nowrap}
+.ems-logo img{width:54px;height:54px;object-fit:cover;border-radius:50%;border:1px solid #d8ccc3;background:#f7f1eb;box-shadow:0 4px 12px rgba(45,40,37,.08)}
+.ems-logo-text strong{display:block;font-family:Georgia,serif;font-size:24px;font-weight:700;letter-spacing:.04em;line-height:1}
+.ems-logo-text span{display:block;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#8c7466;margin-top:4px}
 .ems-nav-links{display:flex;align-items:center;gap:10px}
 .ems-nav-links a{color:#2d2825;text-decoration:none;font-size:14px;font-weight:700;padding:9px 12px;border-radius:999px}
 .ems-nav-links a:hover{background:#f3ece6}
 .ems-admin-link{border:1px solid #cdb8aa}
 .ems-menu-toggle{display:none;border:0;background:#2d2825;color:#fff;border-radius:10px;padding:8px 11px;font-size:18px}
+@media(max-width:520px){.ems-logo img{width:46px;height:46px}.ems-logo-text strong{font-size:20px}.ems-logo-text span{font-size:10px;letter-spacing:.12em}}
 @media(max-width:760px){
   .ems-menu-toggle{display:block}
   .ems-nav-inner{position:relative}
@@ -53,7 +60,7 @@ html{scroll-behavior:smooth}
 
 <nav class="ems-main-nav">
   <div class="ems-nav-inner">
-    <a class="ems-logo" href="#home">EM’S <span>nagels</span></a>
+    <a class="ems-logo" href="#home"><img src="logo-ems.png" alt="Logo Em’s Nagels"><span class="ems-logo-text"><strong>EM’S</strong><span>nagels</span></span></a>
     <button class="ems-menu-toggle" aria-label="Menu openen" onclick="document.querySelector('.ems-nav-links').classList.toggle('open')">☰</button>
     <div class="ems-nav-links">
       <a href="#home">Home</a>
@@ -67,7 +74,7 @@ html{scroll-behavior:smooth}
 
 
 <main>
-<section class="hero"><div class="wrap"><div class="eyebrow">Jouw moment bij Emily</div><h1>Mooie nagels.<br>Helemaal jij.</h1><p>Kies je behandeling, pak een vrij plekje en laat de rest aan Emily over.</p><a href="#boeken" class="hero-book-btn">Afspraak maken</a></div></section>
+<section class="hero"><div class="wrap"><img src="logo-ems.png" alt="Em’s Nagels logo" style="width:112px;height:112px;object-fit:cover;border-radius:50%;border:1px solid var(--line);background:#fff;box-shadow:0 10px 30px rgba(54,43,35,.08);margin:0 auto 18px;display:block"><div class="eyebrow">Jouw moment bij Emily</div><h1>Mooie nagels.<br>Helemaal jij.</h1><p>Kies je behandeling, pak een vrij plekje en laat de rest aan Emily over.</p><a href="#boeken" class="hero-book-btn">Afspraak maken</a></div></section>
 <section id="prijzen"><div class="wrap"><div class="section-title"><div class="eyebrow">Behandelingen</div><h2>Prijslijst</h2></div><div class="grid">
 <div class="card"><div class="eyebrow">Polygel</div><h3>Nieuwe set polygel</h3><p class="muted">Complete nieuwe set, inclusief gelpolish.</p><div class="meta"><span>120 min</span><span>€ 72,50</span></div></div>
 <div class="card"><div class="eyebrow">Polygel</div><h3>Nabehandeling polygel</h3><p class="muted">Je set weer mooi in model, inclusief gelpolish.</p><div class="meta"><span>90 min</span><span>€ 45,00</span></div></div>
